@@ -1,3 +1,48 @@
+# Routing App
+
+1) Generate a project with routing option
+
+2) Generate departmentList and EmployeeList Component
+
+3) Configure the routes
+
+4) Add buttons and use directives to navigate
+
+
+# In app.routing.module.ts file you can add 
+
+import { DepartmentListComponent } from './department-list/department-list.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+
+
+const routes: Routes = [
+  { path:"departments", component: DepartmentListComponent},
+  { path: "employees", component: EmployeeListComponent }
+];
+
+
+// added
+export const routingComponents = [DepartmentListComponent, EmployeeListComponent]
+
+
+
+# app.module.ts file you can remove to two imported component
+
+	import { DepartmentListComponent } from './department-list/department-list.component';
+	import { EmployeeListComponent } from './employee-list/employee-list.component';
+
+
+# app.module.ts file you can add this- routingComponents
+
+	// import { AppRoutingModule } from './app-routing.module';
+// added
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+
+# app.component.html
+
+Add this code
+<router-outlet></router-outlet>
+
 # AngularRouting
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
